@@ -6,23 +6,41 @@ pipeline {
         echo 'Success'
       }
     }
-    stage('Build Docker Image') {
+    stage('Build Branch Docker Image') {
       steps {
         echo 'Success'
       }
     }
-    stage('Run Docker Image Tests') {
+    stage('Run Branch Docker Image Tests - Feature Flag OFF') {
       steps {
         parallel(
-          "Run FVT Tests": {
+          "Run Branch FVT Tests": {
             echo 'Success'
             
           },
-          "Run Unit Tests": {
+          "Run Branch Unit Tests": {
             echo 'Success'
             
           },
-          "Report Code Coverage": {
+          "Report Branch Code Coverage": {
+            echo 'Success'
+            
+          }
+        )
+      }
+    }
+    stage('Run Branch Docker Image Tests - Feature Flag ON') {
+      steps {
+        parallel(
+          "Run Branch FVT Tests": {
+            echo 'Success'
+            
+          },
+          "Run Branch Unit Tests": {
+            echo 'Success'
+            
+          },
+          "Report Branch Code Coverage": {
             echo 'Success'
             
           }
