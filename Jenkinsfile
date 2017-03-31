@@ -11,7 +11,7 @@ pipeline {
         echo 'Success'
       }
     }
-    stage('Run Unit Tests') {
+    stage('Run Docker Image Tests') {
       steps {
         parallel(
           "Run Unit Tests": {
