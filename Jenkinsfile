@@ -1,14 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Build docker image 1') {
+    stage('Build Docker Images') {
       steps {
         parallel(
-          "Build docker image 1": {
+          "Main Server": {
             echo 'Success'
             
           },
-          "Build docker image 2": {
+          "Web Front End": {
+            echo 'Success'
+            
+          },
+          "Database": {
             echo 'Success'
             
           }
