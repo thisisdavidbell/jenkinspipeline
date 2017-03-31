@@ -25,7 +25,7 @@ pipeline {
       steps {
         echo 'Success'
       }
-    }  
+    }
     stage('Run Component Tests') {
       steps {
         echo 'Success'
