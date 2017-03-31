@@ -54,7 +54,16 @@ pipeline {
     }
     stage('Run Component Tests') {
       steps {
-        echo 'Success'
+        parallel(
+          "Run Component Tests": {
+            echo 'Success'
+            
+          },
+          "Feature Flag OFF": {
+            echo 'Success'
+            
+          }
+        )
       }
     }
     stage('Compose MQoC') {
@@ -63,6 +72,11 @@ pipeline {
       }
     }
     stage('Run Product BVT') {
+      steps {
+        echo 'Success'
+      }
+    }
+    stage('Trigger Pull Request') {
       steps {
         echo 'Success'
       }
