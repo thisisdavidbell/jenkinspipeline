@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+    stage('Commit hook') {
+      steps {
+        echo 'Success'
+      }
+    }
     stage('Build Docker Image') {
       steps {
         echo 'Success'
@@ -26,12 +31,12 @@ pipeline {
         echo 'Success'
       }
     }
-    stage('Run Component Tests') {
+    stage('Compose MQoC') {
       steps {
         echo 'Success'
       }
     }
-    stage('Run Component Tests') {
+    stage('Run Product BVT') {
       steps {
         echo 'Success'
       }
