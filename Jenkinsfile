@@ -14,11 +14,11 @@ pipeline {
     stage('Run Docker Image Tests') {
       steps {
         parallel(
-          "Run Unit Tests": {
+          "Run FVT Tests": {
             echo 'Success'
             
           },
-          "Run FVT Tests": {
+          "Run Unit Tests": {
             echo 'Success'
             
           }
