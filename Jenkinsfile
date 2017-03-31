@@ -19,5 +19,15 @@ pipeline {
         )
       }
     }
+    stage('Unit Tests') {
+      steps {
+        echo 'Success'
+      }
+    }
+    stage('Component Tests') {
+      steps {
+        echo 'Success'
+      }
+    }
   }
 }
