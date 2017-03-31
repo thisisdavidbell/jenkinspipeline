@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo 'Success'
       }
+    }
     stage('Run Unit Tests') {
       steps {
         echo 'Success'
