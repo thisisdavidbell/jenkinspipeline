@@ -13,12 +13,16 @@ pipeline {
     }
     stage('Run Unit Tests') {
       steps {
-        echo 'Success'
-      }
-    }
-    stage('Run FVT Tests') {
-      steps {
-        echo 'Success'
+        parallel(
+          "Run Unit Tests": {
+            echo 'Success'
+            
+          },
+          "Run FVT Tests": {
+            echo 'Success'
+            
+          }
+        )
       }
     }
     stage('Compose Component') {
