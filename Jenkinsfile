@@ -11,7 +11,7 @@ pipeline {
         echo 'Success'
       }
     }
-    stage('Run Branch Docker Image Tests - Feature Flag OFF') {
+    stage('Docker Image Tests - FF OFF') {
       steps {
         parallel(
           "Run Branch FVT Tests": {
@@ -29,7 +29,7 @@ pipeline {
         )
       }
     }
-    stage('Run Branch Docker Image Tests - Feature Flag ON') {
+    stage('Docker Image Tests - FF ON') {
       steps {
         parallel(
           "Run Branch FVT Tests": {
