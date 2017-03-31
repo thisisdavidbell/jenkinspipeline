@@ -55,11 +55,11 @@ pipeline {
     stage('Run Component Tests') {
       steps {
         parallel(
-          "Run Component Tests": {
+          "Feature Flag OFF": {
             echo 'Success'
             
           },
-          "Feature Flag OFF": {
+          "Feature Flag ON": {
             echo 'Success'
             
           }
@@ -73,7 +73,16 @@ pipeline {
     }
     stage('Run Product BVT') {
       steps {
-        echo 'Success'
+        parallel(
+          "Feature Flag OFF": {
+            echo 'Success'
+            
+          },
+          "Feature Flag ON": {
+            echo 'Success'
+            
+          }
+        )
       }
     }
     stage('Trigger Pull Request') {
