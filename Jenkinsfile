@@ -21,6 +21,10 @@ pipeline {
           "Run Unit Tests": {
             echo 'Success'
             
+          },
+          "Report Code Coverage": {
+            echo 'Success'
+            
           }
         )
       }
